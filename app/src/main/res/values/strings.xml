@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PzyCrypt</string>
+    <string name="app_desc">Secure your files with  AES-256 </string>
+    <string name="title_activity_settings">Settings</string>
+</resources>

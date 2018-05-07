@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="70dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="50dp">
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#8d6e63"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/app_desc"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#6d4c41"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/file_captured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0"
+                android:textColor="?attr/colorAccent"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="files captured" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#6d4c41"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/enc_completed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0"
+                android:textColor="?attr/colorAccent"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="files crypted" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#6d4c41"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/errs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0"
+                android:textColor="?attr/colorAccent"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="errors" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/currFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8d6e63"
+            android:gravity="center"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <EditText
+                android:layout_weight="2"
+                android:id="@+id/pass"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter password"
+                android:paddingTop="20dp"
+               />
+
+            <Button
+                android:id="@+id/vie"
+                android:text="View"
+                android:background="#5d4037"
+                android:layout_weight="8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/enc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#795548"
+                android:text="encrypt\n(long press)"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/dec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#6d4c41"
+                android:text="decrypt\n(long press)"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/errsList"
+            android:background="#6d4c41"
+            android:text="show errors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+

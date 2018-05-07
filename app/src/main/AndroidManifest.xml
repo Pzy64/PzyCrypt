@@ -1,0 +1,67 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pzy64.PzyCrypt.Pro">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoadFile"
+            android:label="Load file"
+            android:theme="@style/AppThemeAction" />
+        <activity
+            android:name=".About"
+            android:label="About me"
+            android:theme="@style/AppThemeAction" />
+
+        <service android:name=".EncryptServiceX" />
+        <service android:name=".DecryptServiceX" />
+
+        <receiver android:name=".EncryptReciever">
+            <intent-filter>
+                <action android:name="crypto.enc.FILECOUNT" />
+                <action android:name="crypto.enc.REC" />
+                <action android:name="crypto.enc.Fail.REC" />
+                <action android:name="crypto.enc.currFILE" />
+                <action android:name="crypto.enc.COMPLETE" />
+                <action android:name="crypto.enc.CANCEL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".DecryptReciever">
+            <intent-filter>
+                <action android:name="crypto.dec.FILECOUNT" />
+                <action android:name="crypto.dec.REC" />
+                <action android:name="crypto.dec.Fail.REC" />
+                <action android:name="crypto.dec.currFILE" />
+                <action android:name="crypto.dec.COMPLETE" />
+                <action android:name="crypto.dec.CANCEL" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
